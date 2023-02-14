@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from '../../Shared/Navbar/Navbar';
 import Banner from '../Banner/Banner';
+import LaptopCategories from '../LaptopCategories/LaptopCategories';
 
 const Home = () => {
     return (
         <div>
-            <Navbar></Navbar>
             <Banner></Banner>
+            <LaptopCategories></LaptopCategories>
         </div>
     );
 };

@@ -8,7 +8,7 @@ const BannerCard = ({ bannerItem }) => {
         <div id={current} className="carousel-item relative w-full">
             <div className='w-full flex mx-16 p-5'>
                 <div className='w-3/5 flex justify-center items-center'>
-                    <p className='p-4 text-2xl font-bold text-justify'>You can buy desired used laptop or sell used laptop via our online shop. Via our resale shop buying and selling laptops are more easier, secure and time efficient.</p>
+                    <p className='p-4 text-2xl text-justify'>You can buy desired used laptop or sell used laptop via our online <strong>Resale-Shop</strong>.</p>
                 </div>
                 <div className="w-2/5">
                     <img src={img} alt='hp laptop' className="w-full h-full" />
