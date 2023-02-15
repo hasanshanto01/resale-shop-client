@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import LaptopCard from './LaptopCard';
+import CategoryCard from './CategoryCard';
 
 const LaptopCategories = () => {
-    const [laptops, setLaptops] = useState([]);
+    const [laptopCategories, setLaptopCategories] = useState([]);
 
     useEffect(() => {
 
-        fetch('categories.json')
+        fetch('http://localhost:5000/category')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
-                setLaptops(data);
+                setLaptopCategories(data);
             })
 
     }, []);
@@ -21,10 +21,10 @@ const LaptopCategories = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16'>
                 {
-                    laptops?.map(laptop => <LaptopCard
-                        key={laptop.id}
-                        laptop={laptop}
-                    ></LaptopCard>)
+                    laptopCategories?.map(category => <CategoryCard
+                        key={category._id}
+                        category={category}
+                    ></CategoryCard>)
                 }
             </div>
 

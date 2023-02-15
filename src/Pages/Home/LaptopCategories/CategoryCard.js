@@ -2,9 +2,9 @@ import React from 'react';
 import { ComputerDesktopIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
 
-const LaptopCard = ({ laptop }) => {
+const CategoryCard = ({ category }) => {
 
-    const { brand } = laptop;
+    const { brand } = category;
 
     return (
         <div className="card bg-base-100 shadow-xl
@@ -25,4 +25,4 @@ const LaptopCard = ({ laptop }) => {
     );
 };
 
-export default LaptopCard;
+export default CategoryCard;

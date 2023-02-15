@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "brand": "Hp"
+        "brand": "HP"
     },
     {
         "id": 2,
-        "brand": "Dell"
+        "brand": "DELL"
     },
     {
         "id": 3,
-        "brand": "Asus"
+        "brand": "ASUS"
     }
 ]

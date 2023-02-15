@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "name": "HP EliteBook 840 G2 Core i7 5th Gen",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_192501.jpg",
+        "brand": "Hp",
+        "resalePrice": 30000,
+        "originalPrice": 67000,
+        "usedTime": "2 year",
+        "seller": "Abul",
+        "location": "Gazipur",
+        "postedDate": "Feb 12, 2023"
+    },
+    {
+        "id": 2,
+        "name": "HP ProBook 440 G2 Core i5 5th Gen 8GB RAM",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_201358.jpg",
+        "brand": "Hp",
+        "resalePrice": 16000,
+        "originalPrice": 55000,
+        "usedTime": "2 year, 4 months",
+        "seller": "babul",
+        "location": "Savar",
+        "postedDate": "Feb 14, 2023"
+    },
+    {
+        "id": 3,
+        "name": "HP EliteBook 830 G5 Core i5 8th Gen 8GB RAM",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_200990.jpg",
+        "brand": "Hp",
+        "resalePrice": 37500,
+        "originalPrice": 62000,
+        "usedTime": "7 months",
+        "seller": "Hasim",
+        "location": "Dhaka",
+        "postedDate": "Feb 13, 2023"
+    },
+    {
+        "id": 4,
+        "name": "Dell Latitude 7490 Core i5 8th Gen",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_201435.jpg",
+        "brand": "Dell",
+        "resalePrice": 37500,
+        "originalPrice": 62000,
+        "usedTime": "7 months",
+        "seller": "Hasim",
+        "location": "Dhaka",
+        "postedDate": "Feb 13, 2023"
+    },
+    {
+        "id": 5,
+        "name": "Dell Latitude E7270 Core i7 6th Gen",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_161408.jpg",
+        "brand": "Dell",
+        "resalePrice": 16000,
+        "originalPrice": 55000,
+        "usedTime": "2 year, 4 months",
+        "seller": "babul",
+        "location": "Savar",
+        "postedDate": "Feb 14, 2023"
+    },
+    {
+        "id": 6,
+        "name": "Dell Latitude E7480 Core i5 6th Generation",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_201355.jpg",
+        "brand": "Dell",
+        "resalePrice": 30000,
+        "originalPrice": 67000,
+        "usedTime": "2 year",
+        "seller": "Abul",
+        "location": "Gazipur",
+        "postedDate": "Feb 12, 2023"
+    },
+    {
+        "id": 7,
+        "name": "Asus VivoBook X556U Core i5 6th Gen Laptop",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_204876.jpg",
+        "brand": "Asus",
+        "resalePrice": 30000,
+        "originalPrice": 67000,
+        "usedTime": "2 year",
+        "seller": "Abul",
+        "location": "Gazipur",
+        "postedDate": "Feb 12, 2023"
+    },
+    {
+        "id": 8,
+        "name": "Asus Zenbook UX305FA 8GB RAM 256GB SSD Ultrabook",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_187352.jpg",
+        "brand": "Asus",
+        "resalePrice": 30000,
+        "originalPrice": 67000,
+        "usedTime": "2 year",
+        "seller": "Abul",
+        "location": "Gazipur",
+        "postedDate": "Feb 12, 2023"
+    },
+    {
+        "id": 9,
+        "name": "Asus X441U Core i3 6th Gen 4GB RAM",
+        "imgURL": "https://www.bdstall.com/asset/product-image/giant_174943.png",
+        "brand": "Asus",
+        "resalePrice": 37500,
+        "originalPrice": 62000,
+        "usedTime": "7 months",
+        "seller": "Hasim",
+        "location": "Dhaka",
+        "postedDate": "Feb 13, 2023"
+    }
+]

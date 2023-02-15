@@ -4,11 +4,29 @@ import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 
 const Navbar = () => {
 
+    const laptopCategory = <>
+        <li tabIndex={0}>
+            <Link>
+                Laptops
+                <>
+                    <ChevronRightIcon className="h3 w-3 stroke-black lg:hidden"></ChevronRightIcon>
+                    <ChevronDownIcon className="h3 w-3 stroke-black hidden lg:block"></ChevronDownIcon>
+                </>
+            </Link>
+            <ul className="p-2">
+                <li><Link to='/category/HP'>Hp</Link></li>
+                <li><Link to='/category/DELL'>Dell</Link></li>
+                <li><Link to='/category/ASUS'>Asus</Link></li>
+            </ul>
+        </li>
+    </>
+
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/'>Blog</Link></li>
-        <li><Link to='/'>About</Link></li>
-        <li><Link to='/'>Login</Link></li>
+        {laptopCategory}
+        <li><Link to='/blog'>Blog</Link></li>
+        <li><Link to='/about'>About</Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </>;
 
     return (
