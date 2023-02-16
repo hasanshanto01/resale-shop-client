@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext);
+    // console.log(user);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(err => console.log(err))
+    };
 
     const laptopCategory = <>
         <li tabIndex={0}>
@@ -26,7 +36,13 @@ const Navbar = () => {
         {laptopCategory}
         <li><Link to='/blog'>Blog</Link></li>
         <li><Link to='/about'>About</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        {
+            user?.uid ? <>
+                <li><Link to='/'>Dashboard</Link></li>
+                <li><button onClick={handleLogOut}>Log Out</button></li>
+            </> :
+                <li><Link to='/login'>Login</Link></li>
+        }
     </>;
 
     return (
