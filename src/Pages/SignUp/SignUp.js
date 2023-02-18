@@ -20,7 +20,7 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
 
                 // toast.success('User created successfully.')
                 // navigate('/');
@@ -31,7 +31,9 @@ const SignUp = () => {
 
                 updateUser(userInfo)
                     .then(() => {
-                        console.log('updated user:', user);
+                        // console.log('updated user:', user);
+
+                        saveUserDetail(data.name, data.email, data.role)
 
                         toast.success('User created successfully.')
                         navigate('/');
@@ -49,11 +51,36 @@ const SignUp = () => {
         googleLogin()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
+
+                saveUserDetail(user.displayName, user.email);
 
                 navigate('/');
             })
             .catch(err => console.log(err))
+    };
+
+    const saveUserDetail = (name, email, role = 'Buyer') => {
+        const userDetail = {
+            name,
+            email,
+            role
+        }
+        // console.log(userDetail);
+
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userDetail)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log('save user:', data);
+
+            })
+
     }
 
     return (
@@ -74,7 +101,7 @@ const SignUp = () => {
                                 required: 'Name is required'
                             })}
                         />
-                        {errors?.name && <p>{errors?.name.message}</p>}
+                        {errors?.name && <p className='text-red-600'>{errors?.name.message}</p>}
                     </div>
 
                     <div>
@@ -88,7 +115,7 @@ const SignUp = () => {
                                 required: 'Email is required'
                             })}
                         />
-                        {errors?.email && <p>{errors?.email.message}</p>}
+                        {errors?.email && <p className='text-red-600'>{errors?.email.message}</p>}
                     </div>
 
                     <div>
@@ -104,7 +131,7 @@ const SignUp = () => {
                                 pattern: { value: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])/, message: 'Password must have uppercase, number and special characters' }
                             })}
                         />
-                        {errors?.password && <p>{errors?.password.message}</p>}
+                        {errors?.password && <p className='text-red-600'>{errors?.password.message}</p>}
                     </div>
 
                     <div>
@@ -120,7 +147,7 @@ const SignUp = () => {
                             <option>Buyer</option>
                             <option>Seller</option>
                         </select>
-                        {errors?.role && <p>{errors?.role.message}</p>}
+                        {errors?.role && <p className='text-red-600'>{errors?.role.message}</p>}
                     </div>
 
                     <div>

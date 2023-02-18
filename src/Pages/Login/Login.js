@@ -1,12 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
 
     const { login, googleLogin } = useContext(AuthContext);
+
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const [loginError, setLoginError] = useState('');
     console.log(loginError);
@@ -22,7 +26,7 @@ const Login = () => {
                 const user = result.user;
                 // console.log(user);
 
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(err => {
                 // console.log(err)
@@ -36,7 +40,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
 
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(err => console.log(err))
     }
@@ -59,7 +63,7 @@ const Login = () => {
                                 required: 'Email is required'
                             })}
                         />
-                        {errors?.email && <span>{errors?.email.message}</span>}
+                        {errors?.email && <p className='text-red-600'>{errors?.email.message}</p>}
                     </div>
 
                     <div>
@@ -73,7 +77,7 @@ const Login = () => {
                                 required: 'Password is required'
                             })}
                         />
-                        {errors?.password && <span>{errors?.password.message}</span>}
+                        {errors?.password && <p className='text-red-600'>{errors?.password.message}</p>}
                         <p className='text-red-600'>{loginError}</p>
                     </div>
 
