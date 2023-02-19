@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
@@ -8,9 +8,13 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     // console.log(user);
 
+    const navigate = useNavigate();
+
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {
+                navigate('/login');
+            })
             .catch(err => console.log(err))
     };
 

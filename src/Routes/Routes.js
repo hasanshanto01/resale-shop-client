@@ -13,6 +13,9 @@ import Login from "../Pages/Login/Login";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
+import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
+import MyWishlist from "../Pages/Dashboard/MyWishlist/MyWishlist";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
     {
@@ -53,17 +56,33 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
-            {
-                path: '/dashboard/addproduct',
-                element: <AddProduct></AddProduct>
-            },
+            // {
+            //     path: '/dashboard',
+            //     element: <MyProducts></MyProducts>
+            // },
             {
                 path: '/dashboard/products',
                 element: <MyProducts></MyProducts>
             },
             {
+                path: '/dashboard/addproduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
                 path: '/dashboard/buyers',
                 element: <MyBuyers></MyBuyers>
+            },
+            {
+                path: '/dashboard/orders',
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/wishlist',
+                element: <MyWishlist></MyWishlist>
+            },
+            {
+                path: '/dashboard/orders/:id',
+                element: <Payment></Payment>
             },
         ]
     }

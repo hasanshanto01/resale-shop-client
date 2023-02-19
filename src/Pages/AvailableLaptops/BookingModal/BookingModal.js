@@ -8,7 +8,8 @@ const BookingModal = ({ laptopData, setLaptopData }) => {
     const { user } = useContext(AuthContext);
 
     console.log('inside modal', laptopData);
-    const { name, resalePrice } = laptopData;
+    const { _id, imgURL, name, resalePrice, sellerEmail } = laptopData;
+    // console.log(laptopData);
 
 
     const handleBooking = event => {
@@ -25,10 +26,13 @@ const BookingModal = ({ laptopData, setLaptopData }) => {
         const booking = {
             name,
             email,
+            productId: _id,
             productName,
+            productImg: imgURL,
             price,
             phone,
-            meetingLocation
+            meetingLocation,
+            sellerEmail
         }
         console.log(booking);
 
