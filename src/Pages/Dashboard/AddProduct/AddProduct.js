@@ -26,7 +26,7 @@ const AddProduct = () => {
         const formData = new FormData();
         formData.append('image', image);
 
-        const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imgHostingKey}`;
+        const url = `https://api.imgbb.com/1/upload?key=${imgHostingKey}`;
 
         fetch(url, {
             method: 'POST',
@@ -38,9 +38,9 @@ const AddProduct = () => {
                 if (imgData.success) {
 
                     const product = {
-                        postedDate: data.date,
-                        seller: data.name,
-                        sellerEmail: data.email,
+                        postedDate: date,
+                        seller: user?.displayName,
+                        sellerEmail: user?.email,
                         name: data.product,
                         imgURL: imgData.data.url,
                         brand: data.category,
@@ -53,8 +53,9 @@ const AddProduct = () => {
                         location: data.location,
                         status: 'Available'
                     }
+                    console.log(product);
 
-                    fetch('http://localhost:5000/laptop', {
+                    fetch('http://localhost:5000/laptops', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -196,7 +197,7 @@ const AddProduct = () => {
                     </div>
                     <div>
                         <label className="label">
-                            <span className="label-text">Years of Use:</span>
+                            <span className="label-text">Years of Use:(years, months)</span>
                         </label>
                         <input
                             {...register('usedTime', {

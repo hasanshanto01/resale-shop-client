@@ -32,7 +32,7 @@ const BookingModal = ({ laptopData, setLaptopData }) => {
         }
         console.log(booking);
 
-        fetch('http://localhost:5000/booking', {
+        fetch('http://localhost:5000/bookings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
