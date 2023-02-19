@@ -4,7 +4,10 @@ import Main from "../Layouts/Main";
 import About from "../Pages/About/About";
 import AvailableLaptops from "../Pages/AvailableLaptops/AvailableLaptops/AvailableLaptops";
 import Blog from "../Pages/Blog/Blog";
+import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
 import Dashboard from "../Pages/Dashboard/Dashboard/Dashboard";
+import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
+import MyBuyers from "../Pages/Dashboard/MyBuyers/MyBuyers";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import ErrorPage from "../Pages/Shared/ErrorPage/ErrorPage";
@@ -48,12 +51,20 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>,
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
             {
-                path: '/dashboard',
-                element: <Dashboard></Dashboard>
-            }
+                path: '/dashboard/addproduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/dashboard/products',
+                element: <MyProducts></MyProducts>
+            },
+            {
+                path: '/dashboard/buyers',
+                element: <MyBuyers></MyBuyers>
+            },
         ]
     }
 ]);

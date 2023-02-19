@@ -17,7 +17,7 @@ const DashboardLayout = () => {
 
             <div className="drawer drawer-mobile">
                 <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+                <div className="drawer-content flex flex-col">
                     {/* <!-- Page content here --> */}
 
                     <Outlet></Outlet>
@@ -30,24 +30,24 @@ const DashboardLayout = () => {
 
                         {
                             userRole === 'Buyer' && <>
-                                <li><Link to='/dashborad/orders'>My Orders</Link></li>
-                                <li><Link to='/dashborad/wishlist'>My Wishlist</Link></li>
+                                <li><Link to='/dashboard/orders'>My Orders</Link></li>
+                                <li><Link to='/dashboard/wishlist'>My Wishlist</Link></li>
                             </>
                         }
 
                         {
                             userRole === 'Seller' && <>
-                                <li><Link to='/dashborad/addproduct'>Add A Product</Link></li>
-                                <li><Link to='/dashborad/products'>My Products</Link></li>
-                                <li><Link to='/dashborad/buyers'>My Buyers</Link></li>
+                                <li><Link to='/dashboard/products'>My Products</Link></li>
+                                <li><Link to='/dashboard/addproduct'>Add A Product</Link></li>
+                                <li><Link to='/dashboard/buyers'>My Buyers</Link></li>
                             </>
                         }
 
                         {
                             userRole === 'Admin' && <>
-                                <li><Link to='/dashborad/allsellers'>All Sellers</Link></li>
-                                <li><Link to='/dashborad/allbuyers'>All Buyers</Link></li>
-                                <li><Link to='/dashborad/reporteditems'>Reported Items</Link></li>
+                                <li><Link to='/dashboard/allsellers'>All Sellers</Link></li>
+                                <li><Link to='/dashboard/allbuyers'>All Buyers</Link></li>
+                                <li><Link to='/dashboard/reporteditems'>Reported Items</Link></li>
                             </>
                         }
 
