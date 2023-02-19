@@ -16,6 +16,9 @@ import PrivateRoute from "./PrivateRoute";
 import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
 import MyWishlist from "../Pages/Dashboard/MyWishlist/MyWishlist";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import AllSellers from "../Pages/Dashboard/AllSellers/AllSellers";
+import AllBuyers from "../Pages/Dashboard/AllBuyers/AllBuyers";
+import ReportedItems from "../Pages/Dashboard/ReportedItems/ReportedItems";
 
 export const router = createBrowserRouter([
     {
@@ -83,6 +86,18 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/orders/:id',
                 element: <Payment></Payment>
+            },
+            {
+                path: '/dashboard/allsellers',
+                element: <AllSellers></AllSellers>
+            },
+            {
+                path: '/dashboard/allbuyers',
+                element: <AllBuyers></AllBuyers>
+            },
+            {
+                path: '/dashboard/reporteditems',
+                element: <ReportedItems></ReportedItems>
             },
         ]
     }

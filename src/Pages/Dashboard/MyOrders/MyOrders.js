@@ -7,10 +7,10 @@ const MyOrders = () => {
 
     const { user } = useContext(AuthContext);
 
-    const queryClient = useQueryClient()
+    // const queryClient = useQueryClient();
 
     const { data: orderdLaptops = [], refetch } = useQuery({
-        queryKey: ['laptops'],
+        queryKey: ['orderdLaptops'],
         queryFn: async () => {
             try {
                 const res = await fetch(`http://localhost:5000/bookings?email=${user?.email}`);
