@@ -9,8 +9,8 @@ const MyOrders = () => {
 
     // const queryClient = useQueryClient();
 
-    const { data: orderdLaptops = [], refetch } = useQuery({
-        queryKey: ['orderdLaptops'],
+    const { data: bookedLaptops = [], refetch } = useQuery({
+        queryKey: ['bookedLaptops'],
         queryFn: async () => {
             try {
                 const res = await fetch(`http://localhost:5000/bookings?email=${user?.email}`);
@@ -43,25 +43,27 @@ const MyOrders = () => {
                     <tbody>
                         {/* <!-- row  --> */}
                         {
-                            orderdLaptops?.map((laptop, index) => <tr
-                                key={laptop?._id}
+                            bookedLaptops?.map((bookedLaptop, index) => <tr
+                                key={bookedLaptop?._id}
                                 className="hover">
                                 <th>{index + 1}</th>
                                 <td>
                                     <div className="avatar">
                                         <div className="w-24 rounded">
-                                            <img src={laptop.productImg} alt='' />
+                                            <img src={bookedLaptop.productImg} alt='' />
                                         </div>
                                     </div>
                                 </td>
-                                <td>{laptop?.productName}</td>
-                                <td>{laptop?.price}</td>
+                                <td>{bookedLaptop?.productName}</td>
+                                <td>{bookedLaptop?.price}</td>
                                 <td>
                                     {
-                                        laptop?.payment === 'Paid' ?
-                                            <button className="btn btn-sm btn-disabled">Paid</button>
+                                        bookedLaptop?.paid === true ?
+                                            <button className='btn btn-sm btn-disabled'>
+                                                Paid
+                                            </button>
                                             :
-                                            <Link to={`/dashboard/orders/${laptop?._id}`}><button className="btn btn-sm btn-primary">Pay</button></Link>
+                                            <Link to={`/dashboard/orders/${bookedLaptop?._id}`}><button className="btn btn-sm btn-primary">Pay</button></Link>
                                     }
                                 </td>
                             </tr>)

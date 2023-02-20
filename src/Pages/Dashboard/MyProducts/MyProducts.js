@@ -49,8 +49,22 @@ const MyProducts = () => {
                                 <th>{index + 1}</th>
                                 <td>{laptop?.name}</td>
                                 <td>{laptop?.resalePrice}</td>
-                                <td>{laptop?.status}</td>
-                                <td><button className="btn btn-sm btn-primary">Advertise</button></td>
+                                {
+                                    laptop?.status === 'Available' &&
+                                    // <td>{laptop?.status}</td>
+                                    <td className='text-green-500'>Available</td>
+                                }
+                                {
+                                    laptop?.status === 'Sold' &&
+                                    // <td>{laptop?.status}</td>
+                                    <td className='text-red-500'>Sold</td>
+                                }
+
+                                {
+                                    laptop?.status === 'Sold' ? <td><button className="btn btn-sm btn-disabled">Advertise</button></td> :
+                                        <td><button className="btn btn-sm btn-primary">Advertise</button></td>
+                                }
+
                                 <td><button className="btn btn-sm btn-error">Delete</button></td>
                             </tr>)
                         }

@@ -58,6 +58,7 @@ export const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             // {
             //     path: '/dashboard',
@@ -85,6 +86,9 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/orders/:id',
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/bookings/${params.id}`)
+                },
                 element: <Payment></Payment>
             },
             {
