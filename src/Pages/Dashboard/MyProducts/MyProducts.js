@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-hot-toast';
 import { useQuery, useQueryClient } from 'react-query';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
@@ -22,6 +23,46 @@ const MyProducts = () => {
             }
         }
     });
+
+    const handleAdvertise = productId => {
+        // console.log(productId);
+        fetch(`http://localhost:5000/laptops/${productId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('advertised', data);
+
+                if (data.matchedCount > 0) {
+                    refetch();
+                    toast.success('Your product successfully advertised');
+                }
+
+            })
+    };
+
+    const handleDelete = id => {
+        // console.log(id);
+
+        fetch(`http://localhost:5000/laptops/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.deletedCount > 0) {
+                    refetch();
+                    toast.success('Product successfully deleted');
+                }
+            })
+
+    }
 
     return (
         <div className='mt-5'>
@@ -61,11 +102,11 @@ const MyProducts = () => {
                                 }
 
                                 {
-                                    laptop?.status === 'Sold' ? <td><button className="btn btn-sm btn-disabled">Advertise</button></td> :
-                                        <td><button className="btn btn-sm btn-primary">Advertise</button></td>
+                                    laptop?.status === 'Sold' || laptop?.advertisement === true ? <td><button className="btn btn-sm btn-disabled">Advertise</button></td> :
+                                        <td><button onClick={() => handleAdvertise(laptop?._id)} className="btn btn-sm btn-primary">Advertise</button></td>
                                 }
 
-                                <td><button className="btn btn-sm btn-error">Delete</button></td>
+                                <td><button onClick={() => handleDelete(laptop?._id)} className="btn btn-sm btn-error">Delete</button></td>
                             </tr>)
                         }
                     </tbody>
