@@ -1,3 +1,17 @@
+# Resale-Shop
+
+## Live-Site: 
+
+## Technologies
+A list of technologies used within the project:
+* [You can buy product as buyer] 
+* [You can sell your product as seller]
+* [Only buyer can see MyOrders & MyWishlist and can perform some action(like payment)]
+* [Only seller can see MyProducts, AddProduct & MyWishlist and can perform some action(like add, advertise, delete)]
+* [Only admin can see AllSellers, AllBuyers & ReportedItems and can perform some action(like verify,delete)]
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
