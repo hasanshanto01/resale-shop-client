@@ -6,6 +6,10 @@ const LaptopCard = ({ laptop, setLaptopData }) => {
 
     const { _id, imgURL, name, resalePrice, originalPrice, usedTime, seller, location, postedDate, verified } = laptop;
 
+    const handleWishlist = id => {
+        console.log(id);
+    }
+
     return (
         <div className="card bg-base-100 shadow-xl">
             <figure><img src={`${imgURL}`} alt="" className='w-full h-60' /></figure>
@@ -23,8 +27,12 @@ const LaptopCard = ({ laptop, setLaptopData }) => {
                     </div>
                     <div>
                         <div className='flex justify-end'>
-                            <HeartIcon className='w-7 h-7 mr-3'></HeartIcon>
-                            <FlagIcon className='w-7 h-7'></FlagIcon>
+                            <button onClick={() => handleWishlist(_id)} className='btn btn-sm btn-primary'>
+                                <HeartIcon className='w-4 h-4 text-white'></HeartIcon>
+                            </button>
+                            <button className='btn btn-sm btn-error ml-2'>
+                                <FlagIcon className='w-4 h-4 text-white'></FlagIcon>
+                            </button>
                         </div>
                         <p>Location: <strong>{location}</strong></p>
                     </div>

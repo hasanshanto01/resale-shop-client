@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo.png'
+import shop from '../../../assets/shop.png'
 
 const Footer = () => {
     return (
         <footer className="footer mt-16 p-10 bg-secondary text-white justify-between">
             <div>
-                <figure className='border border-white rounded-lg'>
-                    <img src={logo} alt="" className='w-28' />
+                <figure>
+                    <img src={shop} alt="" className='w-24' />
                 </figure>
                 <p>Copyright © 2023 - All right reserved</p>
             </div>
