@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { useQuery } from 'react-query';
 
 const AllBuyers = () => {
@@ -17,6 +18,26 @@ const AllBuyers = () => {
             }
         }
     });
+
+    const handleDelete = id => {
+        // console.log(id);
+
+        fetch(`http://localhost:5000/users/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.deletedCount > 0) {
+                    refetch();
+                    toast.success('Successfully deleted');
+                }
+            })
+
+    }
 
     return (
         <div className='mt-5'>
@@ -42,7 +63,7 @@ const AllBuyers = () => {
                                 <th>{index + 1}</th>
                                 <td>{buyer?.name}</td>
                                 <td>{buyer?.email}</td>
-                                <td><button className="btn btn-sm btn-error">Delete</button></td>
+                                <td><button onClick={() => handleDelete(buyer?._id)} className="btn btn-sm btn-error">Delete</button></td>
                             </tr>)
                         }
                     </tbody>

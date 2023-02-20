@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { useQuery, useQueryClient } from 'react-query';
 
 const AllSellers = () => {
@@ -19,6 +20,51 @@ const AllSellers = () => {
             }
         }
     });
+
+    const handleVerify = seller => {
+        // console.log(seller);
+        const id = seller?._id;
+        const email = seller?.email;
+
+        fetch(`http://localhost:5000/users/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('advertised', data);
+
+                if (data.matchedCount > 0) {
+                    refetch();
+                    toast.success('Successfully verified');
+                }
+
+            })
+
+    };
+
+    const handleDelete = id => {
+        // console.log(id);
+
+        fetch(`http://localhost:5000/users/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.deletedCount > 0) {
+                    refetch();
+                    toast.success('Successfully deleted');
+                }
+            })
+
+    }
 
     return (
         <div className='mt-5'>
@@ -47,13 +93,13 @@ const AllSellers = () => {
                                 <td>{seller?.email}</td>
                                 <td>
                                     {
-                                        seller?.verification === 'Verified' ?
-                                            <button className="btn btn-sm btn-disabled">Verified</button>
+                                        seller?.verified === true ?
+                                            <button className="btn btn-sm btn-disabled text-blue-500">Verified</button>
                                             :
-                                            <button className="btn btn-sm btn-primary">Verify</button>
+                                            <button onClick={() => handleVerify(seller)} className="btn btn-sm btn-primary">Verify</button>
                                     }
                                 </td>
-                                <td><button className="btn btn-sm btn-error">Delete</button></td>
+                                <td><button onClick={() => handleDelete(seller?._id)} className="btn btn-sm btn-error">Delete</button></td>
                             </tr>)
                         }
                     </tbody>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const LaptopCard = ({ laptop, setLaptopData }) => {
 
-    const { _id, imgURL, name, resalePrice, originalPrice, usedTime, seller, location, postedDate } = laptop;
+    const { _id, imgURL, name, resalePrice, originalPrice, usedTime, seller, location, postedDate, verified } = laptop;
 
     return (
         <div className="card bg-base-100 shadow-xl">
@@ -15,7 +15,10 @@ const LaptopCard = ({ laptop, setLaptopData }) => {
                         <p>Date of Post: <strong>{postedDate}</strong></p>
                         <div className='flex'>
                             <h4>Seller: <strong>{seller}</strong></h4>
-                            <CheckCircleIcon className='w-5 ml-3 text-blue-600'></CheckCircleIcon>
+                            {
+                                verified === true &&
+                                <CheckCircleIcon className='w-5 ml-3 text-blue-600'></CheckCircleIcon>
+                            }
                         </div>
                     </div>
                     <div>
