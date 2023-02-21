@@ -14,16 +14,13 @@ const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleSignUp = data => {
-        console.log(data)
+        // console.log(data)
         setSignUpError('');
 
         createUser(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 // console.log(user);
-
-                // toast.success('User created successfully.')
-                // navigate('/');
 
                 const userInfo = {
                     displayName: data.name

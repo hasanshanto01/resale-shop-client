@@ -8,7 +8,7 @@ const AvailableLaptops = () => {
     const [laptopData, setLaptopData] = useState(null);
 
     const laptops = useLoaderData();
-    console.log(laptops);
+    // console.log(laptops);
 
     return (
         <div className='mx-20 mt-14'>

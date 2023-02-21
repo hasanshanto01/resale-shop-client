@@ -1,6 +1,6 @@
 # Resale-Shop
 
-## Live-Site: 
+## Live-Site: (https://resale-shop-db832.web.app/)
 
 ## Technologies
 A list of technologies used within the project:

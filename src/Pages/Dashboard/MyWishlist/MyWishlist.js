@@ -11,9 +11,9 @@ const MyWishlist = () => {
         queryKey: ['wishlistedLaptops'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/wishlists?email=${user?.email}`);
+                const res = await fetch(`https://resale-shop-server-delta.vercel.app/wishlists?email=${user?.email}`);
                 const data = await res.json();
-                console.log(data);
+                // console.log(data);
                 return data;
             }
             catch (err) {
@@ -57,7 +57,7 @@ const MyWishlist = () => {
                                 <td>{laptop?.price}</td>
                                 <td>{laptop?.sellerEmail}</td>
                                 <td>
-                                    <Link to={`/dashboard/payment/${laptop?._id}`}>
+                                    <Link to={`/dashboard/payment/${laptop?.productId}`}>
                                         <button className='btn btn-sm btn-primary'>Purchase</button>
                                     </Link>
                                 </td>

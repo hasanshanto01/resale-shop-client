@@ -38,11 +38,36 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
+
+                saveUserDetail(user.displayName, user.email);
 
                 navigate(from, { replace: true });
             })
             .catch(err => console.log(err))
+    }
+
+    const saveUserDetail = (name, email, role = 'Buyer') => {
+        const userDetail = {
+            name,
+            email,
+            role
+        }
+        // console.log(userDetail);
+
+        fetch('https://resale-shop-server-delta.vercel.app/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userDetail)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log('save user:', data);
+
+            })
+
     }
 
     return (

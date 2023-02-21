@@ -10,7 +10,7 @@ const AllBuyers = () => {
             try {
                 const res = await fetch(`https://resale-shop-server-delta.vercel.app/users?role=Buyer`);
                 const data = await res.json();
-                console.log(data);
+                // console.log(data);
                 return data;
             }
             catch (err) {

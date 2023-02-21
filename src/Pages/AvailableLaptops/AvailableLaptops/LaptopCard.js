@@ -21,9 +21,9 @@ const LaptopCard = ({ laptop, setLaptopData }) => {
             sellerEmail: laptop.sellerEmail
 
         };
-        console.log('inside wishlist', laptopDetail);
+        // console.log('inside wishlist', laptopDetail);
 
-        fetch('http://localhost:5000/wishlists', {
+        fetch('https://resale-shop-server-delta.vercel.app/wishlists', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -48,9 +48,9 @@ const LaptopCard = ({ laptop, setLaptopData }) => {
             sellerName: reportedLaptop.seller,
             sellerEmail: reportedLaptop.sellerEmail
         };
-        console.log(reportedLaptopDetail);
+        // console.log(reportedLaptopDetail);
 
-        fetch('http://localhost:5000/reporteditems', {
+        fetch('https://resale-shop-server-delta.vercel.app/reporteditems', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

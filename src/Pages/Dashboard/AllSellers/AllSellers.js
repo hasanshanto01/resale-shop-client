@@ -12,7 +12,7 @@ const AllSellers = () => {
             try {
                 const res = await fetch(`https://resale-shop-server-delta.vercel.app/users?role=Seller`);
                 const data = await res.json();
-                console.log(data);
+                // console.log(data);
                 return data;
             }
             catch (err) {
@@ -35,7 +35,7 @@ const AllSellers = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('advertised', data);
+                // console.log('advertised', data);
 
                 if (data.matchedCount > 0) {
                     refetch();

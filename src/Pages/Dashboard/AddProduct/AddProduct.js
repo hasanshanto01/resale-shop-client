@@ -53,7 +53,7 @@ const AddProduct = () => {
                         location: data.location,
                         status: 'Available'
                     }
-                    console.log(product);
+                    // console.log(product);
 
                     fetch('https://resale-shop-server-delta.vercel.app/laptops', {
                         method: 'POST',

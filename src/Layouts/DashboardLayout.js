@@ -28,12 +28,8 @@ const DashboardLayout = () => {
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
                         {/* <!-- Sidebar content here --> */}
 
-                        {
-                            userRole === 'Buyer' && <>
-                                <li><Link to='/dashboard/orders'>My Orders</Link></li>
-                                <li><Link to='/dashboard/wishlist'>My Wishlist</Link></li>
-                            </>
-                        }
+                        <li><Link to='/dashboard/orders'>My Orders</Link></li>
+                        <li><Link to='/dashboard/wishlist'>My Wishlist</Link></li>
 
                         {
                             userRole === 'Seller' && <>

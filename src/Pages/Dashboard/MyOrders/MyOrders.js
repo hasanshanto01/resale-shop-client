@@ -15,7 +15,7 @@ const MyOrders = () => {
             try {
                 const res = await fetch(`https://resale-shop-server-delta.vercel.app/bookings?email=${user?.email}`);
                 const data = await res.json();
-                console.log(data);
+                // console.log(data);
                 return data;
             }
             catch (err) {

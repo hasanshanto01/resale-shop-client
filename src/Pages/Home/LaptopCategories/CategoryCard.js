@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { ComputerDesktopIcon } from '@heroicons/react/24/solid';
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
+
 
 const CategoryCard = ({ category }) => {
 

@@ -8,9 +8,9 @@ const ReportedItems = () => {
         queryKey: ['reportedItems'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/reporteditems`);
+                const res = await fetch(`https://resale-shop-server-delta.vercel.app/reporteditems`);
                 const data = await res.json();
-                console.log(data);
+                // console.log(data);
                 return data;
             }
             catch (err) {
@@ -22,7 +22,7 @@ const ReportedItems = () => {
     const handleDeleteItem = (reportId, productId) => {
         console.log(reportId, productId);
 
-        fetch(`http://localhost:5000/reporteditems/${reportId}`, {
+        fetch(`https://resale-shop-server-delta.vercel.app/reporteditems/${reportId}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -33,7 +33,7 @@ const ReportedItems = () => {
                 // console.log(data);
                 if (data.deletedCount > 0) {
 
-                    fetch(`http://localhost:5000/laptops/${productId}`, {
+                    fetch(`https://resale-shop-server-delta.vercel.app/laptops/${productId}`, {
                         method: "DELETE",
                         headers: {
                             "Content-Type": "application/json",

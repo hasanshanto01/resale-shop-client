@@ -11,10 +11,10 @@ const MyBuyers = () => {
         fetch(`https://resale-shop-server-delta.vercel.app/buyers?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 setBuyerDetails(data);
             })
-    }, [])
+    }, [user?.email])
 
     return (
         <div className='mt-5'>

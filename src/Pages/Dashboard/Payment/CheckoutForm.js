@@ -68,7 +68,7 @@ const CheckoutForm = ({ bookedLaptop }) => {
                 },
             },
         );
-        console.log(paymentIntent);
+        // console.log(paymentIntent);
 
         console.log(paymentIntent, confirmError);
         if (paymentIntent.status === 'succeeded') {
@@ -91,7 +91,7 @@ const CheckoutForm = ({ bookedLaptop }) => {
                 .then(res => res.json())
                 .then(paymentData => {
                     if (paymentData.insertedId) {
-                        console.log(paymentData);
+                        // console.log(paymentData);
 
                         setSuccess('Congrates! Your payment completed');
                         setTransactionId(paymentIntent.id);

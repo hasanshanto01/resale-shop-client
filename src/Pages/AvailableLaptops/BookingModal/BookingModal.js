@@ -34,7 +34,7 @@ const BookingModal = ({ laptopData, setLaptopData }) => {
             meetingLocation,
             sellerEmail
         }
-        console.log(booking);
+        // console.log(booking);
 
         fetch('https://resale-shop-server-delta.vercel.app/bookings', {
             method: 'POST',
