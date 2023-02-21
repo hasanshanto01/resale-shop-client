@@ -8,7 +8,7 @@ const MyBuyers = () => {
     const [buyerDetails, setBuyerDetails] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/buyers?email=${user?.email}`)
+        fetch(`https://resale-shop-server-delta.vercel.app/buyers?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);

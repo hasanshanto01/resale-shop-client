@@ -16,7 +16,7 @@ const CheckoutForm = ({ bookedLaptop }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://resale-shop-server-delta.vercel.app/create-payment-intent', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -81,7 +81,7 @@ const CheckoutForm = ({ bookedLaptop }) => {
                 productId
             };
 
-            fetch('http://localhost:5000/payments', {
+            fetch('https://resale-shop-server-delta.vercel.app/payments', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -68,7 +68,7 @@ const SignUp = () => {
         }
         // console.log(userDetail);
 
-        fetch('http://localhost:5000/users', {
+        fetch('https://resale-shop-server-delta.vercel.app/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

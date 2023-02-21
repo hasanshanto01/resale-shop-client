@@ -9,7 +9,7 @@ const Home = () => {
     const [advertisedLaptops, setAdvertisedLaptops] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/laptops/advertised')
+        fetch('https://resale-shop-server-delta.vercel.app/laptops/advertised')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

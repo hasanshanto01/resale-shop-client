@@ -55,7 +55,7 @@ const AddProduct = () => {
                     }
                     console.log(product);
 
-                    fetch('http://localhost:5000/laptops', {
+                    fetch('https://resale-shop-server-delta.vercel.app/laptops', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -78,183 +78,185 @@ const AddProduct = () => {
     }
 
     return (
-        <div className='flex gap-10 mt-5'>
+        <div className='mt-5'>
+            <h2 className='text-3xl text-primary text-center'>Add Your Product</h2>
+            <div className='flex flex-col-reverse lg:flex-row gap-10 mt-5'>
 
-            <div className='w-1/2'>
-                <h2 className='text-3xl text-primary text-center'>Add Your Product</h2>
+                <div className='w-full lg:w-1/2 px-8 lg:px-0'>
 
-                <form onSubmit={handleSubmit(handleAddProduct)}>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Date:</span>
-                        </label>
-                        <input
-                            {...register('date')}
-                            type="text"
-                            defaultValue={date}
-                            className="input input-bordered w-full"
-                            disabled
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Name:</span>
-                        </label>
-                        <input
-                            {...register('name')}
-                            type="text"
-                            defaultValue={user?.displayName}
-                            className="input input-bordered w-full"
-                            disabled
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Email Address:</span>
-                        </label>
-                        <input
-                            {...register('email')}
-                            type="email"
-                            defaultValue={user?.email}
-                            className="input input-bordered w-full"
-                            disabled
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Product Category:</span>
-                        </label>
-                        <select
-                            {...register('category', {
-                                required: true
-                            })}
-                            className="select select-bordered w-full"
-                        >
-                            <option>HP</option>
-                            <option>DELL</option>
-                            <option>ASUS</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Product Name:</span>
-                        </label>
-                        <input
-                            {...register('product', {
-                                required: true
-                            })}
-                            type="text"
-                            className="input input-bordered w-full"
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Product Description:</span>
-                        </label>
-                        <textarea
-                            {...register('description')}
-                            className="textarea textarea-bordered w-full" placeholder="Type here"
-                        ></textarea>
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Product Condition:</span>
-                        </label>
-                        <select
-                            {...register('condition', {
-                                required: true
-                            })}
-                            className="select select-bordered w-full"
-                        >
-                            <option>Excellent</option>
-                            <option>Good</option>
-                            <option>Fair</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Original Price:</span>
-                        </label>
-                        <input
-                            {...register('originalPrice', {
-                                required: true
-                            })}
-                            type="text"
-                            className="input input-bordered w-full"
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Resale Price:</span>
-                        </label>
-                        <input
-                            {...register('resalePrice', {
-                                required: true
-                            })}
-                            type="text"
-                            className="input input-bordered w-full"
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Years of Use:(years, months)</span>
-                        </label>
-                        <input
-                            {...register('usedTime', {
-                                required: true
-                            })}
-                            type="text"
-                            className="input input-bordered w-full"
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Phone:</span>
-                        </label>
-                        <input
-                            {...register('phone', {
-                                required: true
-                            })}
-                            type="text"
-                            placeholder="Type here" className="input input-bordered w-full"
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Location:</span>
-                        </label>
-                        <input
-                            {...register('location', {
-                                required: true
-                            })}
-                            type="text"
-                            placeholder="Type here" className="input input-bordered w-full"
-                        />
-                    </div>
-                    <div>
-                        <label className="label">
-                            <span className="label-text">Product Image:</span>
-                        </label>
-                        <input
-                            {...register('img', {
-                                required: true
-                            })}
-                            type="file"
-                            className="file-input file-input-bordered w-full"
-                        />
-                    </div>
-                    <input type="submit" value="Add Product" className='btn btn-primary w-full mt-4' />
-                </form>
+                    <form onSubmit={handleSubmit(handleAddProduct)}>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Date:</span>
+                            </label>
+                            <input
+                                {...register('date')}
+                                type="text"
+                                defaultValue={date}
+                                className="input input-bordered w-full"
+                                disabled
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Name:</span>
+                            </label>
+                            <input
+                                {...register('name')}
+                                type="text"
+                                defaultValue={user?.displayName}
+                                className="input input-bordered w-full"
+                                disabled
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Email Address:</span>
+                            </label>
+                            <input
+                                {...register('email')}
+                                type="email"
+                                defaultValue={user?.email}
+                                className="input input-bordered w-full"
+                                disabled
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Product Category:</span>
+                            </label>
+                            <select
+                                {...register('category', {
+                                    required: true
+                                })}
+                                className="select select-bordered w-full"
+                            >
+                                <option>HP</option>
+                                <option>DELL</option>
+                                <option>ASUS</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Product Name:</span>
+                            </label>
+                            <input
+                                {...register('product', {
+                                    required: true
+                                })}
+                                type="text"
+                                className="input input-bordered w-full"
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Product Description:</span>
+                            </label>
+                            <textarea
+                                {...register('description')}
+                                className="textarea textarea-bordered w-full" placeholder="Type here"
+                            ></textarea>
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Product Condition:</span>
+                            </label>
+                            <select
+                                {...register('condition', {
+                                    required: true
+                                })}
+                                className="select select-bordered w-full"
+                            >
+                                <option>Excellent</option>
+                                <option>Good</option>
+                                <option>Fair</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Original Price (in dollar):</span>
+                            </label>
+                            <input
+                                {...register('originalPrice', {
+                                    required: true
+                                })}
+                                type="text"
+                                className="input input-bordered w-full"
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Resale Price (in dollar):</span>
+                            </label>
+                            <input
+                                {...register('resalePrice', {
+                                    required: true
+                                })}
+                                type="text"
+                                className="input input-bordered w-full"
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Years of Use:(years, months)</span>
+                            </label>
+                            <input
+                                {...register('usedTime', {
+                                    required: true
+                                })}
+                                type="text"
+                                className="input input-bordered w-full"
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Phone:</span>
+                            </label>
+                            <input
+                                {...register('phone', {
+                                    required: true
+                                })}
+                                type="text"
+                                placeholder="Type here" className="input input-bordered w-full"
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Location:</span>
+                            </label>
+                            <input
+                                {...register('location', {
+                                    required: true
+                                })}
+                                type="text"
+                                placeholder="Type here" className="input input-bordered w-full"
+                            />
+                        </div>
+                        <div>
+                            <label className="label">
+                                <span className="label-text">Product Image:</span>
+                            </label>
+                            <input
+                                {...register('img', {
+                                    required: true
+                                })}
+                                type="file"
+                                className="file-input file-input-bordered w-full"
+                            />
+                        </div>
+                        <input type="submit" value="Add Product" className='btn btn-primary w-full mt-4' />
+                    </form>
+
+                </div>
+
+                <div className='w-full lg:w-1/2 px-8 lg:px-0'>
+                    <DayPicker
+                        mode="single"
+                        selected={selectedDate}
+                    />
+                </div>
 
             </div>
-
-            <div className='w-1/2'>
-                <DayPicker
-                    mode="single"
-                    selected={selectedDate}
-                />
-            </div>
-
         </div>
     );
 };

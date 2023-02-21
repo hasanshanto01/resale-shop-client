@@ -13,7 +13,7 @@ const MyOrders = () => {
         queryKey: ['bookedLaptops'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/bookings?email=${user?.email}`);
+                const res = await fetch(`https://resale-shop-server-delta.vercel.app/bookings?email=${user?.email}`);
                 const data = await res.json();
                 console.log(data);
                 return data;

@@ -6,7 +6,7 @@ const LaptopCategories = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:5000/category')
+        fetch('https://resale-shop-server-delta.vercel.app/category')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);

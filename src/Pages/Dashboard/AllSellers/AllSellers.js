@@ -10,7 +10,7 @@ const AllSellers = () => {
         queryKey: ['sellersData'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/users?role=Seller`);
+                const res = await fetch(`https://resale-shop-server-delta.vercel.app/users?role=Seller`);
                 const data = await res.json();
                 console.log(data);
                 return data;
@@ -26,7 +26,7 @@ const AllSellers = () => {
         const id = seller?._id;
         const email = seller?.email;
 
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://resale-shop-server-delta.vercel.app/users/${id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -49,7 +49,7 @@ const AllSellers = () => {
     const handleDelete = id => {
         // console.log(id);
 
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://resale-shop-server-delta.vercel.app/users/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

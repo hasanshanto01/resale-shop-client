@@ -13,7 +13,7 @@ const MyProducts = () => {
         queryKey: ['laptops'],
         queryFn: async () => {
             try {
-                const res = await fetch(`http://localhost:5000/laptops?email=${user?.email}`);
+                const res = await fetch(`https://resale-shop-server-delta.vercel.app/laptops?email=${user?.email}`);
                 const data = await res.json();
                 console.log(data);
                 return data;
@@ -26,7 +26,7 @@ const MyProducts = () => {
 
     const handleAdvertise = productId => {
         // console.log(productId);
-        fetch(`http://localhost:5000/laptops/${productId}`, {
+        fetch(`https://resale-shop-server-delta.vercel.app/laptops/${productId}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -47,7 +47,7 @@ const MyProducts = () => {
     const handleDelete = id => {
         // console.log(id);
 
-        fetch(`http://localhost:5000/laptops/${id}`, {
+        fetch(`https://resale-shop-server-delta.vercel.app/laptops/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

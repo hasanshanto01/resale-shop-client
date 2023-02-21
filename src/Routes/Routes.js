@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
             {
                 path: '/category/:brand',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/category/${params.brand}`)
+                    return fetch(`https://resale-shop-server-delta.vercel.app/category/${params.brand}`)
                 },
                 element: <PrivateRoute><AvailableLaptops></AvailableLaptops></PrivateRoute>
             },
@@ -87,7 +87,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard/orders/:id',
                 loader: async ({ params }) => {
-                    return fetch(`http://localhost:5000/bookings/${params.id}`)
+                    return fetch(`https://resale-shop-server-delta.vercel.app/bookings/${params.id}`)
                 },
                 element: <Payment></Payment>
             },
