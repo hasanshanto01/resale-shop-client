@@ -85,7 +85,7 @@ export const router = createBrowserRouter([
                 element: <MyWishlist></MyWishlist>
             },
             {
-                path: '/dashboard/orders/:id',
+                path: '/dashboard/payment/:id',
                 loader: async ({ params }) => {
                     return fetch(`https://resale-shop-server-delta.vercel.app/bookings/${params.id}`)
                 },
